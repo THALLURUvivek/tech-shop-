@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #181818;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y:scroll; /* Prevent body scroll */
+}
+
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.cart-items {
+  width: 65%;
+  height: 85%;
+  overflow-y: scroll;
+  padding-right: 40px; /* Space for scrollbar */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 650px;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  height: 210px;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.item-details {
+  flex:2px;
+  
+}
+
+.item-details h3 {
+  font-size: 10px;
+  margin-bottom: 10px;
+  padding-left:50px;
+}
+
+.price {
+  font-size: 10px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.qty-btn {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 20px;
+}
+
+.qty {
+  font-size: 16px;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #ff0000;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  width: 40%;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.discount {
+  color: #00ff00;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.checkout-btn {
+  width: 50%;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 7px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background-color:silver;
+  border-radius: 10px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+  background-color:black;
+}
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  
+  
+  
+  
+  <div class="cart-container">
+    
+   
+    <div class="cart-items">
+
+      <div class="cart-item">
+        <img src="./boat131-2.png" alt="JBL Headphones">
+        <div class="item-details">
+          <h3>JBL Live 660NC Wireless Over-Ear NC Headphones</h3>
+          <p class="price">
+            ₹9,999 <span class="original-price">₹14,999</span>
+          </p>
+          <div class="quantity-control">
+            <button style="color: #ff0000;" class="qty-btn">-</button>
+            <span class="qty">1</span>
+            <button style="color: #ff0000;" class="qty-btn">+</button>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>
+       
+      </div>
+
+      <div class="cart-item">
+        <img src="./boat518-1.png" alt="boAt Headphones">
+        <div class="item-details">
+          <h3>boAt Rockerz 518 On-Ear Wireless Headphones</h3>
+          <p class="price">
+            ₹1,299 <span class="original-price">₹3,990</span>
+          </p>
+          <div class="quantity-control">
+            <button style="color: #ff0000;" class="qty-btn">-</button>
+            <span class="qty">1</span>
+            <button style="color: #ff0000;" class="qty-btn">+</button>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>
+        
+      </div>
+
+      <!-- Add more items to show scrolling behavior -->
+      <div class="cart-item">
+        <img src="./sonyCh710n-3.png" alt="Sample Item">
+        <div class="item-details">
+          <h3>boat AirDopes 131 Wireless In-Ear Earbuds</h3>
+          <p class="price">
+            ₹1,499 <span class="original-price">₹2,499</span>
+          </p>
+          <div class="quantity-control">
+            <button style="color: #ff0000;" class="qty-btn">-</button>
+            <span class="qty">1</span>
+            <button style="color: #ff0000;" class="qty-btn">+</button>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>
+      
+      </div>
+      <div class="cart-item">
+        <img  src="./jbl100-4.png" alt="Sample Item">
+        <div class="item-details">
+          <h3>boat BassHeads 110-Ear Wired Earphones</h3>
+          <p class="price">
+            ₹1,499 <span class="original-price">₹2,499</span>
+          </p>
+          <div class="quantity-control">
+            <button style="color: #ff0000;" class="qty-btn">-</button>
+            <span class="qty">1</span>
+            <button style="color: #ff0000;" class="qty-btn">+</button>
+           
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>
+    
+      </div>
+      <div class="cart-item">
+        <img src="./jbl200bt-2.png" alt="Sample Item">
+        <div class="item-details">
+          <h3>boat255r-1 Wireless</h3>
+          <p class="price">
+            ₹1,499 <span class="original-price">₹2,499</span>
+          </p>
+          <div class="quantity-control">
+            <button style="color: #ff0000;" class="qty-btn">-</button>
+            <span class="qty">1</span>
+            <button style="color: #ff0000;" class="qty-btn">+</button>
+            
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>
+      
+      </div>
+      
+      <!-- Add more as needed to see the scrollbar effect -->
+
+    </div>
+    <div class="cart-summary" style=" margin-left: 10px; width: 30% ; height: 100px;">
+      <div><h4>order summary items <span>(4 items)</span></h4></div><br>
+      <div class="summary-item">
+        <span>Original Price</span>
+        <span>₹22,978</span>
+      </div>
+      <div class="summary-item">
+        <span>Discount</span>
+        <span class="discount">- ₹10,132</span>
+      </div>
+      <div class="summary-item">
+        <span>Delivery</span>
+        <span>Free</span>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="total-price">
+        <span>Total Price</span>
+        <span>₹12,846</span>
+      </div>
+      <br>
+      <button style="height: 10px; width: 300px; text-align: center; align-content: center; margin-left: 10px; padding: auto; color:white;" class="checkout-btn">Checkout</button>
+    </div>
+   
+  </div>
+  <footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
