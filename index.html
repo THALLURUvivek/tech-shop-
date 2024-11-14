@@ -86,7 +86,9 @@
         display: flex;
         justify-content: space-around;
         margin-top: 10%;
+       
       }
+     
       
 
       
@@ -272,7 +274,13 @@ h4{
 .last{
   margin-left: 05%;
 }
-        
+.rgb{
+  display:none ;
+  
+
+  
+}
+
         
        
 
@@ -308,9 +316,9 @@ h4{
 
                 
       <div>
-                  <div class="modal" id="profileModal" tabindex="1" >
+                  <div class="modal" id="profileModal" tabindex="1" style="width:1900px;" >
                     <div class="modal-dialog">
-                      <div class="modal-content" style="color:#cc0000;position:sticky; background-color:black">
+                      <div class="modal-content" style="color:#cc0000;position:sticky; background-color:black; background: 1px;">
                         <div class="modal-header" style="width:300px;">
                           <h5 class="modal-title" style=" padding-left:10px; font-size: 30px;">sign up
                             <div>
@@ -324,26 +332,33 @@ h4{
                           
                           <form>
                           
-                      
+                      <div>
+                    
                             <br>
-                            <input style="text-align: center; background-color: black; color: white; width: 60%;" type="text" name="name" id="form" placeholder="enter your name">
+                            <input style="text-align: center; background-color: black; color: white; width: 60%;" type="text" name="name" id="form" placeholder="enter your name"><br>
+                            <span class="rgb" id="nErr">enter your name</span>
                             <br>
-                            <br>
-                            <input style="text-align: center; align-content: center; background-color: black; width: 60%;" type="email" name="email" id="email" placeholder="enter your email">
-                            <br>
-                            <br>
-                            <input style="text-align: center; align-content: center; background-color: black; width:60%" type="password" name="password" id="password" placeholder="enter your password">
-                            <br>
-                            <br>
-                            <input style="text-align: center; align-content: center; background-color: black; width: 60%;" type="password" name="password" id="password" placeholder="confirm your password">
-                          </form>
                             
+                            <input style="text-align: center; align-content: center; background-color: black; width: 60%;" type="email" name="email" id="email" placeholder="enter your email"><br>
+                            <span class="rgb" id="eErr">enter your email</span>
+                            <br>
+                            
+                            <input style="text-align: center; align-content: center; background-color: black; width:60%;color: white;" type="password" name="password" id="password" placeholder="enter your password"><br>
+                            <span class="rgb" id="pErr">enter your password</span>
+                            <br>
+                          
+                            <input style="text-align: center; align-content: center; background-color: black; width: 60%; color: white;" type="password" name="password" id="cpassword" placeholder="confirm your password"><br>
+                            <span class="rgb" id="cpErr">confirm your password </span>
                         
+                      </div>
+                          </form>
+        
+                            
                         
                         </div>
                         <div class="modal-footer" style="width: 300px;">
                           
-                          <a href="https://www.youtube.com/"> <button style="margin-left: 100px; width: 250px; " type="button" class="btn btn-primary">sign-up</button></a>
+                          <a href="#"> <button style="margin-left: 100px; width: 250px; " type="button" class="btn btn-primary" id="button">sign-up</button></a>
                         </div>
                         <div>
                           <p style="margin-left: 70px;">__________ login with __________</p>
@@ -359,6 +374,41 @@ h4{
           
 
         </div>
+        <script>
+          const element=document.getElementById("button");
+          element.addEventListener("click",function(){
+            let name=document.getElementById("form").value;
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            let cpassword=document.getElementById("cpassword").value;
+
+            if(name==""){
+              document.getElementById("nErr").style.display="block";
+            }else{
+              document.getElementById("nErr").style.display="none";
+            }
+            if(email==""){
+              document.getElementById("eErr").style.display="block";
+            }else{
+              document.getElementById("eErr").style.display="none";
+            }
+            if(password==""){
+              document.getElementById("pErr").style.display="block";
+            }else{
+              document.getElementById("pErr").style.display="none";
+            }
+            if(cpassword==""){
+              document.getElementById("cpErr").style.display="block";
+            }else{
+              document.getElementById("cpErr").style.display="none";
+            }
+            if(name!=""&&email!=""&&password!=""&&cpassword!=""){
+              alert("login successfully completed")
+            }
+           
+         
+          });
+        </script>
   
 
         <div class="center">
@@ -376,7 +426,7 @@ h4{
                    
                     <button type="button" class="btn btn-success">buy now</button>
                 </div>
-                <img   class="vivek" src="./boat131-3.png" class="d-flex w-100" alt="...">
+                <img   class="vivek" src="./img/boat131-3.png" class="d-flex w-100" alt="...">
               
               </div>
               <div class="carousel-item">
@@ -389,7 +439,7 @@ h4{
                   </div>
                   <button type="button" class="btn btn-success">buy now</button>
               </div>
-                <img  class="vivek" src="./jbl500bt-2.png" class="d-block w-100" alt="...">
+                <img  class="vivek" src="./img/jbl500bt-2.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <div class="normal">
@@ -402,7 +452,7 @@ h4{
                  
                   <button type="button" class="btn btn-success">buy now</button>
               </div>
-                <img   class="vivek"src="./sonyXb910n-1.png" class="d-block w-100" alt="...">
+                <img   class="vivek"src="./img/boat410-2.png" class="d-block w-100" alt="...">
               </div>
             </div>
           </div>
@@ -410,11 +460,11 @@ h4{
           <div>
             <h2 >featured products</h2>
             <div class="products">
-              <div class="item0" style="margin-top: 30px;"><p  style="padding-left: 30px; width:300px;">Jbl Enurance Run Sports</p><img src="./boat255r-1.png" height="280px" width="200px" class="sar"><h3 style="padding-left: 30px;;"><p style="padding-left: 20px;"><p>₹999 <del>₹1,599</del></p></h3></div>
-              <div class="item1"><P style="padding-left:140px;">boat Airdopes 203</P><img src="./boat131-3.png"  height="400px" width="390px" class="sar"><h3 style="padding-left: 100px;">₹1,074 <del>₹3,999</del></h3></div>
-              <div class="item2"><P style="padding-left: 140px;">Boat Rockerz 518</P><img src="./boat518-1 (1).png"  height="490px" width="350px" class="sar"><h3 style="padding-left: 90px;"><p>₹1,299 <del>3,990</del></p></div>
-              <div class="item3"> <p style="padding-left: 80px;">JBL Tune 760NC</p><img src="./jbl-endu-1.png"  height="380px" width="200px" class="sar"><h3 style="padding-left: 50px;">₹5,999 <del>₹7,999</del></div>
-              <div class="item4"><p style="padding-left: 70px;">boat Rockerz 2555</p><img src="./jbl760nc-1.png"  height="300px" width="200px" class="sar"><h3 style="padding-left: 40px;"><p>₹899 <del>2,990 </del></p></div>
+              <div class="item0" style="margin-top: 30px;"><p  style="padding-left: 30px; width:300px;">Jbl Enurance Run Sports</p><img src="./img/boat255r-1.png" height="280px" width="200px" class="sar"><h3 style="padding-left: 30px;;"><p style="padding-left: 20px;"><p>₹999 <del>₹1,599</del></p></h3></div>
+              <div class="item1"><P style="padding-left:140px;">boat Airdopes 203</P><img src="./img/boat131-3.png"  height="400px" width="390px" class="sar"><h3 style="padding-left: 100px;">₹1,074 <del>₹3,999</del></h3></div>
+              <div class="item2"><P style="padding-left: 140px;">Boat Rockerz 518</P><img src="./img/boat518-1 (1).png"  height="490px" width="350px" class="sar"><h3 style="padding-left: 90px;"><p>₹1,299 <del>3,990</del></p></div>
+              <div class="item3"> <p style="padding-left: 80px;">JBL Tune 760NC</p><img src="./img/jbl-endu-1.png"  height="380px" width="200px" class="sar"><h3 style="padding-left: 50px;">₹5,999 <del>₹7,999</del></div>
+              <div class="item4"><p style="padding-left: 70px;">boat Rockerz 2555</p><img src="./img/jbl760nc-1.png"  height="300px" width="200px" class="sar"><h3 style="padding-left: 40px;"><p>₹899 <del>2,990 </del></p></div>
             </div>
             </div>
             <div style="display: flex; padding-left:50%; color:white; margin-top: 10px; ">
@@ -451,7 +501,7 @@ h4{
       <!-- Product Card 1 -->
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img  src="./jbl660nc-1.png" alt="JBL Live 660NC" class="product-image">
+          <a href="./profile.html"><img style="display:grid; height: 250px;"  src="./img/jbl660nc-1.png" alt="JBL Live 660NC" class="product-image"></a>
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -468,7 +518,7 @@ h4{
       <!-- Product Card 2 -->
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./boat518-1 (1).png" alt="boAt Rockerz 518" class="product-image">
+          <img src="./img/boat518-1 (1).png" alt="boAt Rockerz 518" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -485,7 +535,7 @@ h4{
       <!-- Product Card 3 -->
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./boat131-3.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/boat131-3.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -502,7 +552,7 @@ h4{
       <!-- Add more product cards similarly -->
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./boat110-1.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/boat110-1.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -517,7 +567,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./boat410-1.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/boat410-1.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -531,7 +581,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./jbl200bt-4.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/jbl200bt-4.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -546,7 +596,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./sonyXb910n-1.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/sonyXb910n-1.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -561,7 +611,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./jbl760nc-1.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/jbl760nc-1.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -576,7 +626,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./boat255r-1.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/boat255r-1.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -591,7 +641,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12">
         <div class="product-card">
-          <img src="./sony-ex14ap-2.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/sony-ex14ap-2.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
@@ -606,7 +656,7 @@ h4{
       </div>
       <div class="col-md-6 col-lg-3 mb-4 col-sm-12;">
         <div class="product-card">
-          <img src="./boat381-3.png"  alt="boAt Airdopes 131" class="product-image">
+          <img src="./img/boat381-3.png"  alt="boAt Airdopes 131" class="product-image">
           <div class="ratings">
             <span class="stars">★★★★★</span>
           </div>
